@@ -11,7 +11,6 @@ export class HomePage {
 
   constructor(public navCtrl: NavController) {}
 
-<<<<<<< HEAD
   goToHome(params) {
     if (!params) params = {};
     this.navCtrl.push(HomePage);
@@ -24,16 +23,4 @@ export class HomePage {
     if (!params) params = {};
     this.navCtrl.push(MapaPage);
   }
-=======
-  goToMapa(params){
-    if (!params) params = {};
-    this.navCtrl.push(MapaPage);
-  }
-
-  goToSobre(params){
-    if (!params) params = {};
-    this.navCtrl.push(SobrePage);
-  }
->>>>>>> d874b5b4c32466a20fb07e15940b8c63511b2141
-
 }

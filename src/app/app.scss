@@ -15,7 +15,6 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
-<<<<<<< HEAD
 /* propriedades do título na toolbar */
 .toolbar-title-md {
   font-size: 4rem;
@@ -45,9 +44,5 @@
 }
 
 .md .menu-inner {
-  background: linear-gradient(to left, rgba(161,201,207,0.3), rgba(160,200,200,1)); 
-=======
-ion-content #side-menu21 {
-    background: fade-out(red, 0.3);
->>>>>>> d874b5b4c32466a20fb07e15940b8c63511b2141
+  background: linear-gradient(to left, rgba(161,201,207,0.3), rgba(160,200,200,1));
 }
