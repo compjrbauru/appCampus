@@ -15,7 +15,6 @@ declare var google: any;
   templateUrl: 'mapa.html'
 })
 export class MapaPage {
-<<<<<<< HEAD
   map: any;
   image: any;
 
@@ -41,19 +40,10 @@ export class MapaPage {
     goToMapa(params){
       if (!params) params = {};
       this.navCtrl.push(MapaPage);
-=======
-
-  @ViewChild('mapa') mapaRef: ElementRef;
-
-  constructor(public navCtrl: NavController,
-    public NavParams: NavParams) {
-
->>>>>>> d874b5b4c32466a20fb07e15940b8c63511b2141
     }
 
     ionViewDidLoad() {
       console.log(this.mapaRef);
-<<<<<<< HEAD
 //      this.DisplayMap();
     }
 
@@ -83,20 +73,6 @@ export class MapaPage {
       }
 
       //const mapa = new google.maps.Map(this.mapaRef.nativeElement, options);
-=======
-      this.DisplayMap();
-    }
-
-    DisplayMap() {
-      const location = new google.maps.LatLng(-22.347859,-49.0298399);
-
-      const options = {
-        center: location,
-        zoom: 18
-      };
-
-      const mapa = new google.maps.Map(this.mapaRef.nativeElement, options);
->>>>>>> d874b5b4c32466a20fb07e15940b8c63511b2141
     }
 
 }
