@@ -2,7 +2,6 @@
   "name": "AppCampus",
   "app_id": "",
   "type": "ionic-angular",
-<<<<<<< HEAD
   "gulpStartupTasks": [
     "sass",
     "watch"
@@ -10,8 +9,4 @@
   "integrations": {
     "cordova": {}
   }
-=======
-  "gulpStartupTasks":  ["sass","watch"],
-  "integrations": {}
->>>>>>> d874b5b4c32466a20fb07e15940b8c63511b2141
 }
