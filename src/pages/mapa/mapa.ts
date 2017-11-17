@@ -1,14 +1,9 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-<<<<<<< HEAD
 import { HomePage } from '../home/home';
 import { SobrePage } from '../sobre/sobre';
 
 declare var google;
-=======
-
-declare var google: any;
->>>>>>> d874b5b4c32466a20fb07e15940b8c63511b2141
 
 @Component({
   selector: 'page-mapa',
