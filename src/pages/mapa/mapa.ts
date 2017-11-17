@@ -35,11 +35,14 @@ export class MapaPage {
 
     GoogleMaps() {
       this.map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 10,
-        center: {lat: -22.347859, lng: -49.0298399}
+        zoom: 17,
+        center: {
+          lat: -22.347859,
+          lng: -49.0298399
+        }
       });
 
-      this.image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+      this.image = 'assets/icon/jr-com-icon.png';
 /*
       let SedeJunior = new google.maps.Marker({
         position: {lat: -23.34942883, lng: -49.03060699},
@@ -51,28 +54,37 @@ export class MapaPage {
       SedeJunior.addListener('click', toggleBounce);
       SedeJunior.addListener('click', AbrirJanela);
 */
-      var Marcadores = [
-        {
-          coords: {lat: -21.34942883, lng: -49.03060699},
-          content: '<p>Sede da Empresa Jr. de Computação</p>' +
-          '<img src="assets/img/8ezqYnKKRFGLxIXQai5a_logo-jr-com.png" style="width:100px; display: block; margin: 0 auto;"/>'
-        },
-        {
-          coords: {lat: -23.34942883, lng: -50.03060699},
-          content: '<p>Marcador 2</p>'
-        },
-        {
-          coords: {lat: -23.34942883, lng: -51.03060699},
-          content: '<p>Marcador 3</p>'
-        }
+
+
+      var marcadores = [
+        [-22.349417, -49.030580, '<p>Jr.com - Empresa Júnior de Computação</p><img src="assets/img/8ezqYnKKRFGLxIXQai5a_logo-jr-com.png" style="width: 100px; display: block; margin: 0 auto;"/>'],
+        [-23.34942883, -50.03060699, '<p>Marcador 2</p>'],
+        [-23.34942883, -51.03060699, '<p>Marcador 3</p>']
       ];
 
-      for(var i = 0; i < Marcadores.length; i++) {
-        NovoMarcador(Marcadores[i]);
-        console.log(i);
-        console.log(Marcadores[i].position);
+      var janela = new google.maps.InfoWindow({
+        maxHeigth: 450,
+        maxWidth: 630
+      });
+
+      for(var i = 0; i < marcadores.length; i++) {
+        var marcador = new google.maps.Marker({
+          position: new google.maps.LatLng(marcadores[i][0], marcadores[i][1]),
+          map: this.map,
+          animation: google.maps.Animation.DROP,
+          icon: this.image
+        });
+
+        google.maps.event.addListener(marcador, 'click', (function(marcador, i) {
+          return function() {
+            janela.setContent(marcadores[i][2]);
+            janela.open(this.map, marcador);
+          }
+        })
+        (marcador, i) )
       }
 
+/*
       function NovoMarcador(props) {
         var marcador = new google.maps.Marker ({
           setIcon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
@@ -81,6 +93,7 @@ export class MapaPage {
           animation: google.maps.Animation.DROP
         });
       }
+*/
 
 /*
       function toggleBounce() {
